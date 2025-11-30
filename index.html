@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            div {
+            width: 300px; 
+            border-radius: 12px; 
+            background-color: grey; 
+            margin: 12px; 
+            padding: 15px;
+            }
+            #cbox{
+            width: 200px;
+            height: 100px;
+            background: lightblue;
+            margin-top: 10px;
+            border-radius: 10px;
+            }
+            
+        </style>
+        <div id="op" ></div>
+        
+        <div>
+            <h2>Change the Text</h2>
+            <p id="txt" >Original Text</p>
+            <button onclick="ce()" >Change</button>
+        </div>
+
+        <div>
+            <h2>Change the Color</h2>
+            <p id="cbox"></p>
+            <button onclick="ccolor()">Change</button>
+        </div>
+
+        <div>
+            <h2>Change the Image</h2>
+            <img id="imgs" src="https://via.placeholder.com/150" width="100" >
+            <br><br>
+            <button onclick="imgc()" >Change</button>
+        </div>
+
+        <div>
+            <h2>Show/Hide the Text</h2>
+            <p id="sit">We can show and hide this line</p>
+            <button onclick="sh()">Show</button>
+            <button onclick="hi()">Hide</button>
+        </div>
+
+        <div>
+            <h2>Live Type Update</h2>
+            <input id="ip" type="text" placeholder="Type here" onkeyup="ipf()">
+            <p id="output">You typed</p>
+        </div>
+
+        <script>
+            function show(text){
+                document.getElementById("op").innerText += text + "\n";
+            }
+            let a=10;
+            let b=5;
+            let c=a+b
+            show("Added " + c);
+            show(a-b);
+            show(a*b);
+            show(a/b);
+            show(a**b);
+
+            show("IF Statement");
+            show("------------------------");
+            if(a>b){
+                show("A is greater than B")
+            }
+            else{
+                show("A is lesser than B")
+            }
+
+            function ce(){
+                document.getElementById('txt').innerHTML='Changed Text';
+            }
+
+            function ccolor(){
+                document.getElementById('cbox').style.background='red';
+            }
+
+            function imgc(){
+                document.getElementById('imgs').src="https://picsum.photos/200/200";
+            }
+
+            function sh(){
+                document.getElementById('sit').style.display='block';
+            }
+
+            function hi(){
+                document.getElementById('sit').style.display='none';
+            }
+
+            function ipf(){
+                let value = document.getElementById('ip').value;
+                document.getElementById('output').innerText="Typed : " + value;
+            }
+        </script>
+
+    </body>
+</html>
